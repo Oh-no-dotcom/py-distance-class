@@ -1,5 +1,4 @@
-from __future__ import annotations, division
-from typing import Any
+from __future__ import annotations
 from functools import total_ordering
 
 
@@ -26,7 +25,7 @@ class Distance:
         else:
             return NotImplemented
 
-    def __iadd__(self, other: Distance) -> Any:
+    def __iadd__(self, other: Distance | int | float) -> Distance:
         if isinstance(other, Distance):
             self.km += other.km
             return self
